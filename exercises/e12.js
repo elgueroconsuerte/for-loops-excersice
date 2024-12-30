@@ -3,11 +3,19 @@
 // Return an array of all deposits greater than 100
 // Array example: bankAccounts in /data/data.js
 // getAllDepositsGreaterThanOneHundred(bankAccounts) => [3432, 43242.34, 23432]
-
+import { bankAccounts } from "../data/data.js";
 export function getAllDepositsGreaterThanOneHundred(array) {
   // Your code goes here...
+  let accountDeposits = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].deposits){
+      accountDeposits.push(array[i].deposits.filter(deposit => deposit > 100));
+    }
+  }
+  return accountDeposits.flat();
 
 }
+console.log(getAllDepositsGreaterThanOneHundred(bankAccounts));
 
 
 

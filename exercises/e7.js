@@ -4,10 +4,23 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
+import { bankAccounts } from "../data/data";
+
 export function getClientWithLeastPositiveBalance(array) {
-  // Your code goes here...
-  
+  let lowest_balance_account = null;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].balance > 0) {
+      if (lowest_balance_account === null || array[i].balance < lowest_balance_account.balance) {
+        lowest_balance_account = array[i];
+      }
+    }
+  }
+
+  return lowest_balance_account ? [lowest_balance_account] : [];
 }
+
+console.log(getClientWithLeastPositiveBalance(bankAccounts));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"

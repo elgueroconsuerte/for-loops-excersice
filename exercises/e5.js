@@ -3,11 +3,17 @@
 // Return an array of all bank account holders names
 // Array example: bankAccounts in /data/data.js
 // getAllClientNames(bankAccounts) => ['Kevin', 'Spenser']
-
+import { bankAccounts } from '../data/data.js';
 export function getAllClientNames(array) {
   // Your code goes here...
+  let names = [];
+  for (let i = 0; i < array.length; i++) {
+    names.push(array[i].name);
+  }
+  return names;
 
 }
+console.log(getAllClientNames(bankAccounts));
 
 
 

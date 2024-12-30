@@ -3,12 +3,20 @@
 // If the account doesn't have withdrawals, it's sum is 0.
 // Array example: bankAccounts in /data/data.js
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
-
+import { bankAccounts } from "../data/data.js";
 export function getAllWithdrawals(array) {
-  // Your code goes here...
-
+  let accountwithdrawals = [];
+  for(let i = 0; i < array.length; i++) {
+    if(array[i].withdrawals) {
+      const sum = array[i].withdrawals.reduce((acc, curr) => acc + curr, 0);
+      accountwithdrawals.push(sum);
+    } else {
+      accountwithdrawals.push(0);
+    }
+  }
+  return accountwithdrawals;
 }
-
+console.log(getAllWithdrawals(bankAccounts));
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
 // If the test has all tests passed, switch to the next exercise file

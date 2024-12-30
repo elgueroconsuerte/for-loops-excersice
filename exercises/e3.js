@@ -10,6 +10,13 @@
 
 export function getAverage(array) {
   // Your code goes here...
+  let sum  = 0
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i]
+  }
+  let average = sum / array.length
+  return average
+
 
 }
 
@@ -23,6 +30,18 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
+  let array = [];
+  let sum = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (parseInt(str[i])) {
+      array.push(parseInt(str[i]));
+    }
+  }
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];
+  }
+  return sum;
+  
 
 }
 

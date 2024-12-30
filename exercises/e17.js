@@ -4,11 +4,18 @@
 // doesArrayInclude(['a', 'b', 'c'], 'a') => true
 // doesArrayInclude(['a', 'b', 'c'], 'f') => false
 // NOTE: You can NOT use the array.includes() method in your code
-
+const array1 = [1, 2, 3];
 export function doesArrayInclude(array, value) {
   // Your code goes here...
+  for(let i = 0; i < array.length; i++){
+    if(array[i] === value){
+      return true;
+    }
+  } 
+  return false
+};
 
-}
+console.log(doesArrayInclude(array1, 5));
 
 
 

@@ -3,8 +3,20 @@
 // Array example: joinToStringData in /data/data.js
 // joinToString(['a', 'b', 'c'], '-') => 'a-b-c'
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
+const joinToStringData = ['a', 'b', 'c'];
+export function joinToString(array, separator) {
+    // Add your code here
+  let result = '';
+  for (let i = 0; i < array.length; i++) {
+    result += array[i];
+    if (i < array.length - 1) {
+        result += separator;
+    }
+  }
+    return result;
 
-export function joinToString(array, separator) {}
+}
+console.log(joinToString(joinToStringData, '-'));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-18"

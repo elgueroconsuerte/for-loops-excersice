@@ -3,11 +3,18 @@
 // Return an array of bank accounts with balance over $100
 // Array example: bankAccounts in /data/data.js
 // getClientsWithBalanceOverOneHundred(array) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
-
+import { bankAccounts } from "../data/data.js";
 export function getClientsWithBalanceOverOneHundred(array) {
   // Your code goes here...
-
+  let accountBalance_100 = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].balance > 100){
+      accountBalance_100.push(array[i]);
+    }
+  }
+  return accountBalance_100;
 }
+console.log(getClientsWithBalanceOverOneHundred(bankAccounts));
 
 
 
